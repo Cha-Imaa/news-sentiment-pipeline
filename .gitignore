@@ -1,0 +1,29 @@
+# Data files
+*.csv
+*.parquet
+data/*.sql
+
+# Terraform
+**/.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+*.tfvars
+.terraform.lock.hcl
+
+# Python
+__pycache__/
+*.py[cod]
+.env
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# AWS credentials
+.aws/
+aws_console_url
+
+# OS
+.DS_Store
+Thumbs.db
