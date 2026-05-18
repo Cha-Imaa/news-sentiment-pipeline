@@ -42,3 +42,18 @@ output "athena_results_path" {
   description = "S3 path where Athena query results will be stored"
   value       = "s3://${aws_s3_bucket.data_lake.id}/${var.athena_results_prefix}/"
 }
+
+output "rds_endpoint" {
+  description = "RDS endpoint used by the local loader and Glue job"
+  value       = aws_db_instance.news_db.address
+}
+
+output "rds_port" {
+  description = "RDS MySQL port"
+  value       = aws_db_instance.news_db.port
+}
+
+output "rds_database_name" {
+  description = "Name of the source MySQL database"
+  value       = aws_db_instance.news_db.db_name
+}
