@@ -57,3 +57,28 @@ output "rds_database_name" {
   description = "Name of the source MySQL database"
   value       = aws_db_instance.news_db.db_name
 }
+
+output "glue_role_arn" {
+  description = "ARN of the IAM role used by AWS Glue"
+  value       = aws_iam_role.glue_role.arn
+}
+
+output "glue_connection_name" {
+  description = "Name of the Glue connection to RDS"
+  value       = aws_glue_connection.rds_connection.name
+}
+
+output "glue_catalog_database_name" {
+  description = "Name of the Glue catalog database"
+  value       = aws_glue_catalog_database.analytics_db.name
+}
+
+output "glue_crawler_name" {
+  description = "Name of the Glue crawler"
+  value       = aws_glue_crawler.processed_data_crawler.name
+}
+
+output "glue_script_s3_path" {
+  description = "S3 path of the uploaded Glue ETL script"
+  value       = "s3://${aws_s3_bucket.data_lake.id}/${aws_s3_object.glue_script.key}"
+}
